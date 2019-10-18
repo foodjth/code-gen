@@ -42,8 +42,11 @@ public abstract class BaseReadTable {
                 }
                 field.setComment(rs.getString("column_comment"));
                 field.setFieldName(rs.getString("fieldName"));
+                field.setFieldNameHump(underlineToCamel(rs.getString("fieldName")));
                 field.setNotNull("Y".equalsIgnoreCase(rs.getString("nullable")) ? 2 : 1);
                 field.setFieldType(rs.getString("fieldType"));
+                field.setIsKey(Integer.parseInt(rs.getString("iskey")));
+
                 //field.setPrecision(rs.getString("numeric_precision"));
                 field.setFieldPointLength(rs.getInt("scale"));
                 list.add(field);
@@ -144,6 +147,39 @@ public abstract class BaseReadTable {
             }
         }
         return list;
+    }
+
+
+    /**
+     * 下划线格式字符串转换为驼峰格式字符串
+     *
+     * @param param
+     * @return
+     */
+    public static String underlineToCamel(String param) {
+        if (param == null || "".equals(param.trim())) {
+            return "";
+        }else{
+            param = param.toLowerCase();
+        }
+        int len = param.length();
+        StringBuilder sb = new StringBuilder(len);
+        for (int i = 0; i < len; i++) {
+            char c = param.charAt(i);
+            if (c == '_') {
+                if (++i < len) {
+                    sb.append(Character.toUpperCase(param.charAt(i)));
+                }
+            } else {
+                sb.append(c);
+            }
+        }
+        return sb.toString();
+    }
+
+    public static void main(String[] args){
+        String str = "APP_PO_W";
+        System.out.println(underlineToCamel(str));
     }
 
 }

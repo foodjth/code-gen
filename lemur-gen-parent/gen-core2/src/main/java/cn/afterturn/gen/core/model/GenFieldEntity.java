@@ -26,6 +26,10 @@ public class GenFieldEntity implements Serializable {
      */
     private String fieldName;
     /**
+     * 数据库字段名称(驼峰)
+     */
+    private String fieldNameHump;
+    /**
      * 字段类型
      */
     private String type;
@@ -418,6 +422,14 @@ public class GenFieldEntity implements Serializable {
 
     public void setBean(GenBeanEntity bean) {
         this.bean = bean;
+    }
+
+    public String getFieldNameHump() {
+        return fieldNameHump;
+    }
+
+    public void setFieldNameHump(String fieldNameHump) {
+        this.fieldNameHump = fieldNameHump;
     }
 
     @Override

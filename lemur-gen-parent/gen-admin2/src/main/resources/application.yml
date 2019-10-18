@@ -24,7 +24,7 @@ beetl:
 ###################  spring配置  ###################
 spring:
   redis:
-    host: localhost
+    host: 10.243.141.31
     port: 6379
     password:
   profiles:
@@ -70,9 +70,9 @@ mybatis-plus:
 spring:
   profiles: dev
   datasource:
-      url: jdbc:mysql://127.0.0.1:3306/easycode?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-      username: root
-      password: ROOT
+      url: jdbc:mysql://localhost:3306/skydb?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+      username: unicenter
+      password: unicenter
       filters: log4j,wall,mergeStat
 
 logging:
@@ -101,7 +101,7 @@ guns:
 spring:
   profiles: pro
   datasource:
-      url: jdbc:mysql://127.0.0.1:3306/easycode?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+      url: xxx
       username: root
       password: ROOT
       filters: log4j,wall,mergeStat

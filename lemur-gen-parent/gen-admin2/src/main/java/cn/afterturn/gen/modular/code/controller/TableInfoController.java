@@ -154,7 +154,7 @@ public class TableInfoController extends BaseController {
     public Object dbImport(DbInfoModel entity, String dbName, String tableName) {
         entity = dbInfoService.selectOne(entity);
         CodeGenModel model = new CodeGenModel();
-        model.setDbType(GenCoreConstant.MYSQL);
+        model.setDbType(entity.getDbType());
         model.setTableName(tableName);
         model.setDbName(dbName);
         model.setUrl(entity.getDbUrl());

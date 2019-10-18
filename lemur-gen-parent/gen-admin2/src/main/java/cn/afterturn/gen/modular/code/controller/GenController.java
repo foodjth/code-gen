@@ -156,7 +156,7 @@ public class GenController {
         entity = dbInfoService.selectOne(entity);
         String[] templates = req.getParameterValues("templates[]");
         CodeGenModel model = new CodeGenModel();
-        model.setDbType(GenCoreConstant.MYSQL);
+        model.setDbType(entity.getDbType());
         model.setTableName(tableName);
         model.setDbName(dbName);
         model.setUrl(entity.getDbUrl());

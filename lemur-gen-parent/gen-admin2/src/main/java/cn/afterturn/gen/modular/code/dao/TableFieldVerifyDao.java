@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.baomidou.mybatisplus.plugins.pagination.Pagination;
 import cn.afterturn.gen.modular.code.model.TableFieldVerifyModel;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -16,6 +17,7 @@ import java.util.List;
  * @author JueYue
  * @Date 2017-09-20 09:24
  */
+@Mapper
 @Repository
 public interface TableFieldVerifyDao extends BaseMapper<TableFieldVerifyModel>{
 

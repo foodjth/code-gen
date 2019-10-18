@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Properties;
 
 import cn.afterturn.gen.core.util.ToolUtil;
+import org.springframework.stereotype.Component;
 
 /**
  * beetl配置(如果需要配置别的配置可参照这个形式自己添加)
@@ -15,6 +16,7 @@ import cn.afterturn.gen.core.util.ToolUtil;
  * @date 2017-05-24 20:37
  */
 @Configuration
+@Component
 @ConfigurationProperties(prefix = BeetlProperties.BEETLCONF_PREFIX)
 public class BeetlProperties {
 
