@@ -40,7 +40,7 @@
         <freemark.version>2.3.23</freemark.version>
         <commons-lang3.version>3.6</commons-lang3.version>
         <ehcache.core.version>2.6.11</ehcache.core.version>
-        <mysql-connector-java.version>8.0.16</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
     </properties>
 
     <dependencyManagement>
